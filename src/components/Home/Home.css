@@ -1,0 +1,20 @@
+.display-home a {
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.display-home a:hover {
+    color: rgb(130, 201, 25);
+    font: message-box;
+}
+
+.display-home h2 {
+    color: rgb(196, 169, 135);
+}
+
+.display-home h2:hover {
+    color: rgb(235, 184, 108);
+    transition: all;
+    transition-duration: 5s;
+    transform: scale(1, 1.15);
+}

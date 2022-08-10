@@ -1,0 +1,39 @@
+.food-head h3 {
+    color: rgb(235, 184, 108);
+}
+
+.food-head h3:hover {
+    color: black;
+    transition: all;
+    transition-duration: 10s;
+    transform: scale(1, 1.15);
+}
+
+.display {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.food-display {
+    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 40px 0 40px;
+
+}
+
+.cart {
+    background-color: burlywood;
+    margin-right: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.cart-display {
+    position: sticky;
+    top: 100px;
+}
+
+.cart-display hr {
+    border-top: 1px dotted red;
+}

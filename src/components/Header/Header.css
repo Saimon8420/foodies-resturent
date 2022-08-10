@@ -1,0 +1,25 @@
+.display-header {
+    background-color: dimgrey;
+}
+
+.display-header h1 {
+    font-style: oblique;
+    transition: ease-in;
+    transition-duration: 5s;
+    transition-delay: 0s;
+    color: antiquewhite;
+}
+
+.display-header h1:hover {
+    color: orange;
+}
+
+.display-header a {
+    text-decoration: wavy;
+    margin-left: 20px;
+    color: black;
+}
+
+.display-header a:hover {
+    color: orange;
+}

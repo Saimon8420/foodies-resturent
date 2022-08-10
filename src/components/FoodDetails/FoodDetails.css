@@ -1,0 +1,26 @@
+.food-details {
+    text-align: center;
+    height: auto;
+    width: auto;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 8px;
+    border-radius: 10px;
+}
+
+.food-details img {
+    height: 300px;
+    width: 250px;
+    border-radius: 10px;
+}
+
+.food-details button {
+    background-color: orange;
+    border: none;
+    border-radius: 5px;
+    padding: 3px 5px 3px 5px;
+}
+
+.food-details button:hover {
+    cursor: pointer;
+    color: white;
+}
