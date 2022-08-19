@@ -5,22 +5,45 @@
     padding: 10px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 8px;
     border-radius: 10px;
+    position: relative;
 }
 
 .food-details img {
     height: 300px;
-    width: 250px;
+    width: 100%;
     border-radius: 10px;
 }
 
-.food-details button {
-    background-color: orange;
-    border: none;
-    border-radius: 5px;
-    padding: 3px 5px 3px 5px;
+.details-btn {
+    bottom: 0px;
 }
 
-.food-details button:hover {
+.details-btn button {
+    background-color: orange;
+    border: none;
+    border-radius: 0px 0px 5px 5px;
+    padding: 3px 5px 3px 5px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+}
+
+.details-btn button:hover {
     cursor: pointer;
     color: white;
+}
+
+@media only screen and(max-width:576px) {
+    .food-details img {
+        width: 100%;
+    }
+
+
+}
+
+@media only screen and (min-width:577px) and (max-width:992px) {
+    .food-details img {
+        width: 100%;
+    }
 }

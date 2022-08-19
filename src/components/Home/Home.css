@@ -1,3 +1,7 @@
+.display-home {
+    width: 100%;
+}
+
 .display-home a {
     margin-left: 10px;
     text-decoration: none;
@@ -6,15 +10,30 @@
 .display-home a:hover {
     color: rgb(130, 201, 25);
     font: message-box;
+    font-size: large;
 }
 
 .display-home h2 {
-    color: rgb(196, 169, 135);
+    color: black;
 }
 
 .display-home h2:hover {
-    color: rgb(235, 184, 108);
+    color: rgb(34, 34, 219);
     transition: all;
     transition-duration: 5s;
     transform: scale(1, 1.15);
+}
+
+@media only screen and(max-width:576px) {
+    .display-home {
+        width: 100%;
+    }
+
+
+}
+
+@media only screen and (min-width:577px) and (max-width:992px) {
+    .display-home {
+        width: 100%;
+    }
 }

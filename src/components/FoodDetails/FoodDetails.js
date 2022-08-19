@@ -11,7 +11,9 @@ const FoodDetails = ({ item, addFood }) => {
             <h5>Food Region: {item.strArea}</h5>
             <p>Food type: {type}</p>
             <p><small style={{ 'font-weight': 'bold' }}>Price: {item.idMeal.slice(2, 4)}$</small></p>
-            <button onClick={() => addFood(item)}>Add to Cart <FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon></button>
+            <div className='details-btn'>
+                <button onClick={() => addFood(item)}>Add to Cart <FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon></button>
+            </div>
         </div>
     );
 };

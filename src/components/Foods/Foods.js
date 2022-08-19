@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { storedItem } from '../../Utilities/local-storage';
 import Cart from '../Cart/Cart';
 import FoodDetails from '../FoodDetails/FoodDetails';
 import './Foods.css';
@@ -13,7 +14,7 @@ const Foods = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setFoods(data.meals));
-    }, []);
+    }, [value]);
 
     const addFood = (food) => {
         const exists = added.find(add => add.idMeal === food.idMeal)
@@ -29,48 +30,15 @@ const Foods = () => {
         const restCart = added.filter(add => add.idMeal !== item.idMeal);
         setAdded(restCart);
     }
-
-    // const [quantity, setQuantity] = useState(1);
-
-    // const itemIncrease = () => {
-    //     setQuantity(quantity + 1);
-    // };
-    // const itemDecrease = () => {
-    //     if (quantity > 1) {
-    //         setQuantity(quantity - 1);
-    //     }
-    // };
-
-    // const [priceTotal, setPriceTotal] = useState([]);
-
     const total = () => {
-        let totalPrice = 0;
-        let price = added.map(add => parseInt(add.idMeal.slice(2, 4)));
-        for (let total of price) {
-            totalPrice = totalPrice + total;
+        const price = (added.map(add => add.idMeal.slice(2, 4)));
+        let priceTotal = 0;
+        for (let each of price) {
+            priceTotal = priceTotal + parseInt(each);
         }
-        return totalPrice;
+        return priceTotal;
     }
-    let totalPrice = 0;
-    const quantity1 = item => {
-        console.log(item);
-        let price = added.map(add => parseInt(add.idMeal.slice(2, 4)));
-        for (let total of price) {
-            let priceInit = total * item;
-            totalPrice = totalPrice + priceInit;
-        }
-        console.log(totalPrice);
-    }
-    // console.log(quantity1);
-    // const grandTotal = price => {
-    //     setPriceTotal(price);
-    // }
-    // console.log(priceTotal);
-
-    // let grandtotal = 0;
-    // grandtotal = grandtotal + priceTotal;
-    // console.log(grandtotal);
-
+    storedItem(added);
     return (
         <div className='food-head'>
             <h3>Menu Section: {food.toUpperCase()}</h3>
@@ -93,9 +61,8 @@ const Foods = () => {
                                 key={add.idMeal}
                                 selected={add}
                                 removeSelected={removeSelected}
-                                // grandTotal={grandTotal}
-                                quantity1={quantity1}
-                            ></Cart>)
+                            ><Link to='/order'>Order</Link>
+                            </Cart>)
                         }
                         <hr />
                         <p style={{ 'font-weight': 'bold' }}>Total Price: {total()}$</p>

@@ -1,7 +1,6 @@
 .footer {
     background-color: bisque;
-}
-
-.footer p {
-    padding-top: 10px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
 }

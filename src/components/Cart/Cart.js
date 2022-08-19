@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import './Cart.css';
-const Cart = ({ selected, removeSelected }) => {
+const Cart = ({ selected, removeSelected, children }) => {
     const name = selected.strMeal.length > 12 ? `${selected.strMeal.slice(0, 10)}` : `${selected.strMeal}`;
 
     const [quantity, setQuantity] = useState(1);
@@ -15,12 +15,11 @@ const Cart = ({ selected, removeSelected }) => {
             setQuantity(quantity - 1);
         }
     };
-    console.log(quantity);
-    const total = () => {
-        let totalPrice = 0;
+
+    const totalPrice = () => {
         let price = parseInt(selected.idMeal.slice(2, 4));
-        totalPrice = price * quantity;
-        return totalPrice;
+        price = price * quantity;
+        return price;
     };
     return (
         <div>
@@ -34,7 +33,7 @@ const Cart = ({ selected, removeSelected }) => {
                     <button onClick={itemDecrease}>-</button>
                 </div>
 
-                <p id='price'><small style={{ 'fontWeight': 'bold' }}> Price:{total()}$</small></p>
+                <p id='price'><small style={{ 'fontWeight': 'bold' }}> Price:{totalPrice()}$</small></p>
 
                 <button
                     onClick={() => removeSelected(selected)}
